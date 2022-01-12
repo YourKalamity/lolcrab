@@ -1,0 +1,11 @@
+[package]
+name = "lolcrab"
+version = "0.1.0"
+authors = ["YourKalamity <63474858+YourKalamity@users.noreply.github.com>"]
+edition = "2018"
+
+
+[dependencies]
+colored = "2"
+rand = "0.8"
+atty = "0.2"
