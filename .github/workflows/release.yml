@@ -19,7 +19,7 @@ jobs:
         with:
           toolchain: stable
 
-      - name: Install Cargo
+      - name: Compile with Cargo
         uses: actions-rs/cargo@v1
         with:
           command: build
@@ -30,5 +30,50 @@ jobs:
         with: 
           path: target/release/lolcrab.exe
           name: windows
+
+  linux:
+    runs-on: ubuntu-latest
+    name: Linux Compile
+    steps:
+
+    - name: Install Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+
+      - name: Compile with Cargo
+        uses: actions-rs/cargo@v1
+        with:
+          command: build
+          args: --release --all-features
+      
+      - name: Publish builds
+        uses: actions/upload-artifact@v2
+        with: 
+          path: target/release/lolcrab.exe
+          name: linux
+  macOS:
+    runs-on: macos-latest
+    name: macOS Compile
+    steps:
+
+    - name: Install Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+
+      - name: Compile with Cargo
+        uses: actions-rs/cargo@v1
+        with:
+          command: build
+          args: --release --all-features
+      
+      - name: Publish builds
+        uses: actions/upload-artifact@v2
+        with: 
+          path: target/release/lolcrab
+          name: linux
+    
+  
 
         
