@@ -1,0 +1,34 @@
+name: Compile into Executables for Release
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    name: Windows Compile
+    steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Install Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+
+      - name: Install Cargo
+        uses: actions-rs/cargo@v1
+        with:
+          command: build
+          args: --release --all-features
+      
+      - name: Publish builds
+        uses: actions/upload-artifact@v2
+        with: 
+          path: target/release/lolcrab.exe
+          name: windows
+
+        
