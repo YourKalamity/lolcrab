@@ -28,10 +28,10 @@ jobs:
     runs-on: ubuntu-latest
     name: Linux Compile
     steps:
-    - name: Install Rust
-      uses: actions-rs/toolchain@v1
-      with:
-        toolchain: stable
+      - name: Install Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
       - name: Compile with Cargo
         uses: actions-rs/cargo@v1
         with:
@@ -46,10 +46,10 @@ jobs:
     runs-on: macos-latest
     name: macOS Compile
     steps:
-    - name: Install Rust
-      uses: actions-rs/toolchain@v1
-      with:
-        toolchain: stable
+      - name: Install Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
       - name: Compile with Cargo
         uses: actions-rs/cargo@v1
         with:
