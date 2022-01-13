@@ -37,9 +37,9 @@ jobs:
     steps:
 
     - name: Install Rust
-        uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
 
       - name: Compile with Cargo
         uses: actions-rs/cargo@v1
@@ -58,9 +58,9 @@ jobs:
     steps:
 
     - name: Install Rust
-        uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
 
       - name: Compile with Cargo
         uses: actions-rs/cargo@v1
